@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  postgres:
+    image: "postgres:latest"
+    restart: always
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: "tack"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "4444"
+    networks:
+      - elk_net
+networks:
+  elk_net:
+    driver: bridge
